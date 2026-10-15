@@ -1,0 +1,111 @@
+.section {
+  padding: 96px 0;
+  background: white;
+  border-top: 1px solid var(--gray-100);
+}
+
+.header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 64px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-light);
+  padding: 5px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--gray-900);
+}
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.stepWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 220px;
+  gap: 14px;
+}
+
+/* Icon bubble: coral tint */
+.stepIcon {
+  width: 64px; height: 64px;
+  border-radius: var(--r-xl);
+  background: var(--brand-light);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(196,87,58,0.16);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.step:hover .stepIcon {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(196,87,58,0.28);
+}
+
+.stepNum {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  background: var(--brand-light);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.stepDesc {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+.connector {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 32px;
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+/* Arrow uses warm gray to match palette */
+.connector svg path { stroke: var(--gray-300); }
+
+@media (max-width: 768px) {
+  .steps { flex-direction: column; align-items: center; gap: 16px; }
+  .connector { transform: rotate(90deg); padding: 0; }
+  .stepWrapper { flex-direction: column; align-items: center; gap: 8px; }
+}

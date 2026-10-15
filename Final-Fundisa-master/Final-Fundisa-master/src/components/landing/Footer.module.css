@@ -1,0 +1,207 @@
+/* Footer uses deep ink — the dark ocean background from the photo */
+.footer {
+  background: var(--ink);
+  padding: 64px 0 0;
+}
+
+.inner {}
+
+.top {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr 240px;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+}
+
+/* Logo icon: coral gradient */
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, #C4573A, #D4607A);
+  border-radius: var(--r-md);
+  box-shadow: 0 4px 12px rgba(196,87,58,0.38);
+}
+
+.logoText {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+}
+
+.brandTagline {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.socialBtn {
+  width: 36px; height: 36px;
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.socialBtn:hover {
+  background: rgba(196,87,58,0.28);
+  color: white;
+  border-color: rgba(196,87,58,0.50);
+}
+
+/* Link groups */
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkGroupTitle {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.30);
+  margin-bottom: 4px;
+}
+
+.footerLink {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: color 0.12s;
+  width: fit-content;
+}
+.footerLink:hover { color: white; }
+
+/* Newsletter */
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletterDesc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.40);
+  line-height: 1.5;
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.newsletterInput {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: white;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.newsletterInput::placeholder { color: rgba(255,255,255,0.28); }
+.newsletterInput:focus { border-color: rgba(196,87,58,0.70); }
+
+/* Subscribe button: coral gradient */
+.newsletterBtn {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #C4573A, #D4607A);
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  min-height: 44px;
+}
+.newsletterBtn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Bottom bar */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.copy {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.28);
+}
+
+.motto {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.22);
+  font-style: italic;
+}
+
+.bottomLinks { display: flex; gap: 16px; }
+
+.bottomLink {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.32);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.12s;
+}
+.bottomLink:hover { color: rgba(255,255,255,0.70); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .top { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+@media (max-width: 600px) {
+  .top { grid-template-columns: 1fr; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .motto { display: none; }
+}

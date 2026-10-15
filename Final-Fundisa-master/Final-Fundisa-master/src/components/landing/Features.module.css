@@ -1,0 +1,113 @@
+.section {
+  padding: 96px 0;
+  background: white;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 64px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-light);
+  padding: 5px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+  color: var(--gray-900);
+}
+
+.sub {
+  font-size: 1.0625rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-xl);
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+  background: white;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.icon {
+  width: 48px; height: 48px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  letter-spacing: 0.02em;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.cardArrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 4px;
+  transition: gap 0.15s;
+}
+.card:hover .cardArrow { gap: 10px; }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .grid { grid-template-columns: 1fr; } }
