@@ -1,0 +1,276 @@
+.section {
+  padding: 96px 0;
+  background: white;
+  border-top: 1px solid var(--gray-100);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Org dashboard card */
+.orgDash {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.orgDashHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: var(--pearl);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.orgDashDot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+.orgDashLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  margin-left: 8px;
+}
+
+.orgDashBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orgStats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+}
+
+.orgStat {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.orgStatVal {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--brand);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.orgStatLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--gray-400);
+}
+
+/* Table */
+.orgTable {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.orgTableHead {
+  display: grid;
+  grid-template-columns: 80px 1fr 140px 56px 80px;
+  gap: 8px;
+  background: var(--gray-50);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.orgTableHeadCell {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+}
+
+.orgTableRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 140px 56px 80px;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  transition: background 0.12s;
+}
+.orgTableRow:last-child { border-bottom: none; }
+.orgTableRow:hover { background: var(--gray-50); }
+
+/* Avatar: coral gradient */
+.orgTableAvatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C4573A, #D4607A);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orgTableCell {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.orgTableProgress {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.orgProgressBar {
+  flex: 1;
+  height: 5px;
+  background: var(--gray-200);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+/* Progress fill: coral → rose */
+.orgProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #C4573A, #D4607A);
+  border-radius: 99px;
+}
+
+.orgTableScore {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-700);
+}
+
+.orgTableStatus {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+}
+
+/* Status chips use octopus tones */
+.status_done   { background: var(--success-light); color: #2D6B53; }
+.status_active { background: var(--brand-light); color: var(--brand); }
+.status_new    { background: var(--gray-100); color: var(--gray-500); }
+
+/* Right column */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-light);
+  padding: 5px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--gray-900);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.featureList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.feature {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.featureIcon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.featureLabel {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 3px;
+}
+
+.featureDesc {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+/* CTA button: coral gradient */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #C4573A, #D4607A);
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  box-shadow: var(--shadow-brand);
+  transition: transform 0.15s, box-shadow 0.15s;
+  min-height: 52px;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(196,87,58,0.40);
+}
+
+@media (max-width: 1100px) {
+  .inner { grid-template-columns: 1fr; gap: 48px; }
+  .orgTableHead, .orgTableRow { grid-template-columns: 64px 1fr 100px 48px 72px; }
+}
+
+@media (max-width: 600px) {
+  .orgStats { grid-template-columns: repeat(2,1fr); }
+  .featureList { grid-template-columns: 1fr; }
+  .orgTableHead, .orgTableRow { grid-template-columns: 56px 1fr 56px; }
+  .orgTableHead :nth-child(n+4), .orgTableRow :nth-child(n+4) { display: none; }
+}

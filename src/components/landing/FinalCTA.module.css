@@ -1,0 +1,162 @@
+.section {
+  padding: 0;
+}
+
+/* Main band: ink → coral → rose — the full depth-to-surface journey of the octopus */
+.inner {
+  background: linear-gradient(135deg, #0D0F1A 0%, #C4573A 55%, #D4607A 100%);
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blob 1: periwinkle — like the cool undertones on the skin */
+.blob1 {
+  position: absolute;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(123,143,186,0.14) 0%, transparent 68%);
+  top: -150px; right: -80px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Blob 2: amber — the spot pattern */
+.blob2 {
+  position: absolute;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(212,168,71,0.16) 0%, transparent 68%);
+  bottom: -100px; left: -40px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: var(--r-full);
+  padding: 6px 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 28px;
+}
+
+.badgeDot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+.heading {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}
+
+.sub {
+  font-size: 1.125rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 520px;
+  line-height: 1.65;
+  margin-bottom: 40px;
+}
+
+.ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+/* Primary: white with coral text */
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand);
+  background: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  transition: transform 0.15s, box-shadow 0.15s;
+  min-height: 52px;
+}
+.ctaPrimary:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(0,0,0,0.32); }
+
+/* Secondary: ghost on dark bg */
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  padding: 13px 26px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  min-height: 52px;
+}
+.ctaSecondary:hover { background: rgba(255,255,255,0.22); transform: translateY(-1px); }
+
+.metrics {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  width: 100%;
+  max-width: 600px;
+}
+
+.metric { text-align: center; }
+
+.metricVal {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+}
+
+@media (max-width: 600px) {
+  .inner { padding: 72px 0; }
+  .metrics { gap: 28px; }
+}

@@ -1,0 +1,171 @@
+/* ─── Fundisa — Octopus Palette ──────────────────────────────────────────── */
+/*
+  Extracted from the octopus photo:
+  --brand        #C4573A  coral-rose (dominant warm coral)
+  --brand-dark   #9E3A24  deep burnt sienna
+  --brand-light  #FDF0EC  pale blush tint
+  --brand-mid    #D4607A  rose-pink
+  --accent       #D4A847  golden amber (spots)
+  --accent-light #FBF5E0  pale gold tint
+  --ink          #0D0F1A  near-black deep ocean
+  --pearl        #F5EDE8  sucker pale blush
+  --periwinkle   #7B8FBA  cool slate-blue undertone
+  --periwinkle-light #EEF1F8
+  --success      #5BAF8E  muted sea-green
+  --success-light #E8F5F0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ── Primary brand: warm coral-rose ── */
+  --brand:          #C4573A;
+  --brand-dark:     #9E3A24;
+  --brand-mid:      #D4607A;
+  --brand-light:    #FDF0EC;
+  --brand-hover:    #B04832;
+
+  /* ── Accent: golden amber (octopus spots) ── */
+  --accent:         #D4A847;
+  --accent-dark:    #A07E2A;
+  --accent-light:   #FBF5E0;
+
+  /* ── Cool periwinkle (skin undertone) ── */
+  --periwinkle:       #7B8FBA;
+  --periwinkle-light: #EEF1F8;
+
+  /* ── Semantic ── */
+  --success:        #5BAF8E;
+  --success-light:  #E8F5F0;
+  --error:          #B93232;
+  --error-light:    #FDECEA;
+
+  /* ── Surface tones (pearl/sucker palette) ── */
+  --pearl:          #F5EDE8;
+  --ink:            #0D0F1A;
+
+  /* ── Neutrals — warm-tinted grays ── */
+  --gray-50:        #FAF7F5;
+  --gray-100:       #F2EDE9;
+  --gray-200:       #E4DBD5;
+  --gray-300:       #CABFB8;
+  --gray-400:       #A0908A;
+  --gray-500:       #7A6A64;
+  --gray-600:       #5C4D47;
+  --gray-700:       #3F332E;
+  --gray-800:       #261D19;
+  --gray-900:       #150E0B;
+  --white:          #FFFFFF;
+
+  /* ── Legacy aliases (dashboards keep using these) ── */
+  --green:          #C4573A;
+  --green-dark:     #9E3A24;
+  --green-mid:      #D4607A;
+  --green-light:    #FDF0EC;
+  --amber:          #D4A847;
+  --amber-light:    #FBF5E0;
+
+  /* ── Typography ── */
+  --font-sans:      'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display:   'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body:      'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* ── Radius ── */
+  --r-sm:    6px;
+  --r-md:    12px;
+  --r-lg:    18px;
+  --r-xl:    24px;
+  --r-full:  9999px;
+  /* legacy aliases */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+
+  /* ── Shadows ── */
+  --shadow-sm:    0 1px 3px rgba(13,15,26,.06), 0 1px 2px rgba(13,15,26,.04);
+  --shadow-md:    0 4px 16px rgba(13,15,26,.08), 0 2px 4px rgba(13,15,26,.04);
+  --shadow-lg:    0 10px 40px rgba(13,15,26,.10), 0 4px 12px rgba(13,15,26,.05);
+  --shadow-xl:    0 24px 64px rgba(13,15,26,.13);
+  --shadow-brand: 0 8px 32px rgba(196,87,58,.28);
+  --shadow-card:  0 4px 16px rgba(13,15,26,.08);
+  --shadow-nav:   0 1px 0 var(--gray-200);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-800);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--gray-900);
+}
+
+p { line-height: 1.7; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, video { max-width: 100%; display: block; }
+
+/* ── Utilities ─────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--wide { max-width: 1400px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Scroll reveal ──────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 3px; }
